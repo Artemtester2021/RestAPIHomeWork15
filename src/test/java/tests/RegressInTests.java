@@ -21,10 +21,8 @@ public class RegressInTests extends TestBase{
         given()
                 .header(FREE_API_KEY_NAME, FREE_API_KEY_VALUE)
                 .log().uri()
-
                 .when()
                 .get(USERS_END_POINT + notValidUserId)
-
                 .then()
                 .log().status()
                 .statusCode(HTTP_NOT_FOUND)
@@ -37,10 +35,8 @@ public class RegressInTests extends TestBase{
         given()
                 .header(FREE_API_KEY_NAME, FREE_API_KEY_VALUE)
                 .log().uri()
-
                 .when()
                 .get(RESOURS_END_POINT + notResourceUserId)
-
                 .then()
                 .log().status()
                 .statusCode(HTTP_NOT_FOUND)
@@ -56,7 +52,6 @@ public class RegressInTests extends TestBase{
                 .body(newBody)
                 .contentType(JSON)
                 .log().uri()
-
                 .when()
                 .put(USERS_END_POINT + validUserId)
                 .then()
@@ -75,10 +70,8 @@ public class RegressInTests extends TestBase{
                 .body(newUserDataBody)
                 .contentType(JSON)
                 .log().uri()
-
                 .when()
                 .patch(USERS_END_POINT + validUserId)
-
                 .then()
                 .log().status()
                 .log().body()
@@ -93,10 +86,8 @@ public class RegressInTests extends TestBase{
                 .header(FREE_API_KEY_NAME, FREE_API_KEY_VALUE)
                 .contentType(JSON)
                 .log().uri()
-
                 .when()
                 .delete(USERS_END_POINT + validUserId)
-
                 .then()
                 .log().status()
                 .statusCode(HTTP_NO_CONTENT);
